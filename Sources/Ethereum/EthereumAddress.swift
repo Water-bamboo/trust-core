@@ -16,7 +16,7 @@ public struct EthereumAddress: Address, Hashable {
 
     /// Validates that the string is a valid address.
     static public func isValid(string: String) -> Bool {
-        guard let data = Data(hexString: string) else {
+        guard let data = Data(hexStr: string) else {
             return false
         }
         let eip55String = EthereumAddress.computeEIP55String(for: data)
@@ -46,7 +46,7 @@ public struct EthereumAddress: Address, Hashable {
 
     /// Creates an address with an hexadecimal string representation.
     public init?(string: String, coin: Coin) {
-        guard let data = Data(hexString: string), data.count == Ethereum.addressSize else {
+        guard let data = Data(hexStr: string), data.count == Ethereum.addressSize else {
             return nil
         }
         self.data = data
@@ -55,11 +55,11 @@ public struct EthereumAddress: Address, Hashable {
     }
 
     public init?(string: String) {
-        self.init(string: string, coin: .ethereum)
+        self.init(string: string, coin: .naka)
     }
 
     public init?(data: Data) {
-        self.init(data: data, coin: .ethereum)
+        self.init(data: data, coin: .naka)
     }
 
     public var description: String {
@@ -73,6 +73,10 @@ public struct EthereumAddress: Address, Hashable {
     public static func == (lhs: EthereumAddress, rhs: EthereumAddress) -> Bool {
         return lhs.data == rhs.data
     }
+
+    static public var emptyAddress : String = {
+        return "0x0000000000000000000000000000000000000000"
+    }()
 }
 
 extension EthereumAddress {

@@ -16,7 +16,7 @@ public final class EthereumPublicKey: PublicKey {
     }
 
     /// Coin this key is for.
-    public let coin = Coin.ethereum
+    public let coin = Coin.naka
 
     /// Raw representation of the public key.
     public let data: Data

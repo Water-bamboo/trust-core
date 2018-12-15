@@ -98,4 +98,24 @@ public final class ERC20Encoder {
         try! encoder.encode(function: function, arguments: [from, to, tokens])
         return encoder.data
     }
+
+    /// Encodes a function call to `getRate`
+    ///
+    /// Solidity function: `function getRate(address token, address exchanger) returns (uint256 rate);`
+    public static func encodeGetRate(token: EthereumAddress, exchanger: EthereumAddress) -> Data {
+        let function = Function(name: "getRate", parameters: [.address, .address])
+        let encoder = ABIEncoder()
+        try! encoder.encode(function: function, arguments: [token, exchanger])
+        return encoder.data
+    }
+
+    /// Encodes a function call to `owner`
+    ///
+    /// Solidity function: `function owner() public constant returns (address);`
+    public static func encodeOwner() -> Data {
+        let function = Function(name: "owner", parameters: [])
+        let encoder = ABIEncoder()
+        try! encoder.encode(function: function, arguments: [])
+        return encoder.data
+    }
 }
