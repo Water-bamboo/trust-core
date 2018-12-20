@@ -112,7 +112,7 @@ public final class ERC20Encoder {
     /// Encodes a function call to `setRate`
     ///
     /// Solidity function: `function setRate(address token, uint256 newRate) returns (bool success)
-    public static func encodeSetRate1(token: EthereumAddress, newRate: BigInt) -> Data {
+    public static func encodeSetRate1(token: EthereumAddress, newRate: BigUInt) -> Data {
         let function = Function(name: "setRate", parameters: [.address, .uint(bits: 256)])
         let encoder = ABIEncoder()
         try! encoder.encode(function: function, arguments: [token, newRate])
