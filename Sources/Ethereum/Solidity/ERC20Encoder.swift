@@ -109,6 +109,16 @@ public final class ERC20Encoder {
         return encoder.data
     }
 
+    /// Encodes a function call to `setRate`
+    ///
+    /// Solidity function: `function setRate(address token, uint256 newRate) returns (bool success)
+    public static func encodeSetRate(token: EthereumAddress, newRate: BigInt) -> Data {
+        let function = Function(name: "setRate", parameters: [.address, .uint(bits: 256)])
+        let encoder = ABIEncoder()
+        try! encoder.encode(function: function, arguments: [token, newRate])
+        return encoder.data
+    }
+
     /// Encodes a function call to `owner`
     ///
     /// Solidity function: `function owner() public constant returns (address);`
