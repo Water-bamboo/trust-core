@@ -10,7 +10,7 @@ import Foundation
 /// Index based on https://github.com/satoshilabs/slips/blob/master/slip-0044.md
 public enum Coin: Int {
     case bitcoin = 0
-    case naka = 25
+    case naka = 2019
     case ethereum = 60
     case ethereumClassic = 61
     case poa = 178
@@ -18,6 +18,7 @@ public enum Coin: Int {
     case gochain = 6060
 
     // test networks
+    case nakaTest = 2018
 //    case ethereumRopsten
 //    case ethereumKovan
 //    case ethereumRinkeby
