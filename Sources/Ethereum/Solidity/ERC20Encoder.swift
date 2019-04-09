@@ -128,4 +128,34 @@ public final class ERC20Encoder {
         try! encoder.encode(function: function, arguments: [])
         return encoder.data
     }
+
+    /// Encodes a function call to `resolveAddress`
+    ///
+    /// Solidity function: `function resolveAddress(address addr) returns (string resolved)
+    public static func encodeResolveAddress(addr: EthereumAddress) -> Data {
+        let function = Function(name: "resolveAddress", parameters: [.address])
+        let encoder = ABIEncoder()
+        try! encoder.encode(function: function, arguments: [addr])
+        return encoder.data
+    }
+
+    /// Encodes a function call to `resolveName`
+    ///
+    /// Solidity function: `function resolveName(string name) returns (address resolved)
+    public static func encodeResolveName(name: String) -> Data {
+        let function = Function(name: "resolveName", parameters: [.string])
+        let encoder = ABIEncoder()
+        try! encoder.encode(function: function, arguments: [name])
+        return encoder.data
+    }
+
+    /// Encodes a function call to `assignName`
+    ///
+    /// Solidity function: `function assignName(string name) returns (bool success)
+    public static func encodeAssignName(name: String) -> Data {
+        let function = Function(name: "assignName", parameters: [.string])
+        let encoder = ABIEncoder()
+        try! encoder.encode(function: function, arguments: [name])
+        return encoder.data
+    }
 }
