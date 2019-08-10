@@ -19,8 +19,8 @@ public enum Coin: Int {
 
     // test networks
     case nakaTest = 2018
-//    case ethereumRopsten
-//    case ethereumKovan
-//    case ethereumRinkeby
-//    case ethereumSokol
+    case ethereumRopsten = 3
+//    case ethereumKovan = 42
+//    case ethereumRinkeby = 4
+//    case ethereumSokol = 77
 }
