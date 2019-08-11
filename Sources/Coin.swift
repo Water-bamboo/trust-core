@@ -23,4 +23,5 @@ public enum Coin: Int {
 //    case ethereumKovan = 42
 //    case ethereumRinkeby = 4
 //    case ethereumSokol = 77
+    case custom = -1
 }
