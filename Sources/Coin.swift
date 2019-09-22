@@ -8,9 +8,14 @@ import Foundation
 
 /// Supported coins.
 /// Index based on https://github.com/satoshilabs/slips/blob/master/slip-0044.md
+/// chainId跟网络发送的字节编码有关：https://chainid.network/
+/// coinType跟钱包的生成规则有关, 参考：https://github.com/satoshilabs/slips/blob/master/slip-0044.md
+/// Coin != ChainId
+
+/// 第一个生成的币：Eth/Naka 入数据库后也不应该跟这个有关。
 public enum Coin: Int {
     case bitcoin = 0
-    case naka = 2019
+    case naka = 2019//应该去掉
     case ethereum = 60
     case ethereumClassic = 61
     case poa = 178
@@ -18,10 +23,6 @@ public enum Coin: Int {
     case gochain = 6060
 
     // test networks
-    case nakaTest = 2018
-    case ethereumRopsten = 3
-//    case ethereumKovan = 42
-//    case ethereumRinkeby = 4
-//    case ethereumSokol = 77
+    case nakaTest = 2018//应该去掉
     case custom = -1
 }
